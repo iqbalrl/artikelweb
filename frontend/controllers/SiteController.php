@@ -12,7 +12,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use app\models\PostSearch;
+use backend\models\PostSearch;
+use backend\models\Post;
 
 /**
  * Site controller
@@ -78,7 +79,9 @@ class SiteController extends Controller
         $dcat = \backend\models\Category::find()->all();
         $category = '';
         foreach ($dcat as $row) {
-            $category .= \yii\helpers\Html::a($row->name. '&nbsp;<span class="badge">'.count($row->posts).'</span>',['/site/index','PostSearch[category_id]']);
+            $category .= \yii\helpers\Html::a($row->name. '&nbsp;<span class="badge">'
+                                .count($row->posts).'</span>',['/site/index','PostSearch[category_id]' => $row->id],
+                    ['class' => 'btn btn-info', 'style' => 'margin: 10px;']);
         }
             return $this->render('index',[
                         'searchModel' => $searchModel,
@@ -87,6 +90,14 @@ class SiteController extends Controller
                                 
     ]);
 }
+
+
+    public function actionDetail($id) {
+        $dmodel = $this->findModel($id);
+        return $this->render('detail', [
+            'content' => $dmodel->content
+        ]);
+    }
     
 
     /**
@@ -223,5 +234,13 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+    
+    protected function findModel($id) {
+        if (($model = Post::findOne($id)) !== null) {
+            return $model;
+        }
+        
+        throw new \yii\web\NotFoundHttpException('The Requested page does not exist. ');
     }
 }

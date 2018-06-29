@@ -19,7 +19,7 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= ''//$form->field($model, 'lead_photo')->textInput(['maxlength' => true]) ?>
 
-    <?= ''//$form->field($model, 'lead_text')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'lead_text')->textarea(['rows' => 6]) ?>
 
     <?= ''//$form->field($model, 'meta_description')->textInput(['maxlength' => true]) ?>
     
