@@ -19,12 +19,13 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= ''//$form->field($model, 'lead_photo')->textInput(['maxlength' => true]) ?>
 
-    <?= ''//$form->field($model, 'lead_text')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'lead_text')->textarea(['rows' => 6]) ?>
 
     <?= ''//$form->field($model, 'meta_description')->textInput(['maxlength' => true]) ?>
     
     <?= $form->field($model, 'category_id')->dropDownList($model::selectOptions(),['prompt' => ' --- Pilih Kategori --- ']) ?>
     
+    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
     <?= $form->field($model, 'content')->textarea() ?>
 
     <?= ''//$form->field($model, 'created_at')->textInput() ?>
