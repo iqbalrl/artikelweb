@@ -30,7 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'slug',
             'lead_photo',
-            'lead_text:ntext',
+//            'lead_text:ntext',
+            [
+                'attribute' => 'lead_text',
+                'format' => 'html'
+            ],
             //'content:ntext',
             //'meta_description',
             //'created_at',
