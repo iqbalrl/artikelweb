@@ -27,7 +27,7 @@ use dosamigos\ckeditor\CKEditor;
     
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
     
-    <?= $form->field($model, 'content')->textarea() ?>
+    <?= ''//$form->field($model, 'content')->textarea() ?>
 
     <?= ''//$form->field($model, 'created_at')->textInput() ?>
 
