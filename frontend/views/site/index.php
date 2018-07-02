@@ -5,6 +5,13 @@ use yii\widgets\ListView;
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
+
+        <div class="jumbotron">
+            <h1>ARTIKEL WEB!</h1>
+    
+            <p class="lead">selamat datang di artikel web aneee</p>
+   
+        </div>
     <div class="body-content">
         <div class="row">
             <div class="col-md-9" style="min-height: 600px;">
