@@ -25,7 +25,7 @@ use dosamigos\ckeditor\CKEditor;
     
     <?= $form->field($model, 'category_id')->dropDownList($model::selectOptions(),['prompt' => ' --- Pilih Kategori --- ']) ?>
     
-    <?= $form->field($model, 'content')->textInput() ?>
+    <?= $form->field($model, 'content')->textarea() ?>
 
     <?= ''//$form->field($model, 'created_at')->textInput() ?>
 
