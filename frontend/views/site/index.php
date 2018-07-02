@@ -18,7 +18,7 @@ $this->title = 'My Yii Application';
             <div class="col-md-3">
                 <div class="panel panel-success" style="width: 100%; margin-bottom: 20px;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Category</h3>
+                        <h3 class="panel-title">Categoury</h3>
                     </div>
                     <div class="panel-body">
                         <?= $category ?>
